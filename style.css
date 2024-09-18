@@ -1,0 +1,683 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7E5FF;
+}
+
+
+
+/***********************************************************************************************************************************/
+/*                                                   H E A D E R                                                                   */
+/***********************************************************************************************************************************/
+
+img {
+    padding: 20px;
+}
+
+.suporte {
+    display: flex;
+    /*Define o layout com flexivel,permitindo que os elementos filhos sejam dispostos em uma linha ou coluna.*/
+    align-items: center;
+    /*Alinha ods elementos filhos no centro*/
+    height: 200px;
+    /*Define a altura do elemento com 200px*/
+    color: #FF66C4;
+}
+
+.suportecliente {
+    display: flex;
+    /*Adiciona um espaçamento de 10px a direita do elemento*/
+    color: #FF66C4;
+    align-items: center;
+    margin-right: -20px;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    justify-content: end;
+    margin-right: 850px;
+    /*alinha os elementos filhos horizontamente no final (direta).*/
+}
+
+.carrinho {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #FF66C4;
+    cursor: pointer;
+}
+
+.caixadepesquisa {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FF66C4;
+    height: 40px;
+    padding: 10px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+.caixadepesquisa .botaopesquisa i {
+    background-color: #FF66C4;
+}
+
+.caixadepesquisa a {
+    text-decoration: none;
+}
+
+.caixadepesquisa i {
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+}
+
+
+.textodapesquisa {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #F7E5FF;
+    font-size: 16px;
+    line-height: 400px;
+}
+
+.botaopesquisa {
+    width: 280px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FF66C4;
+    display: flex;
+}
+
+/***********************************************************************************************************************************/
+/*                                                     M E N U                                                                     */
+/***********************************************************************************************************************************/
+
+.menuh {
+    list-style: none;
+    padding: 20px 0px 20px 0px;
+    background-color: #FF66C4;
+    display: flex;
+    align-items: center;
+}
+
+.menuh li {
+    display: inline;
+}
+
+.menuh li a {
+    color: aliceblue;
+    padding: 10px;
+    display: flex;
+    display: inline;
+    font-size: 1.3rem;
+    color: aliceblue;
+    font-weight: 600px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.menuh a::after {
+    content: '';
+    width: 4.5rem;
+    height: 1px;
+    background: white;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: all 0.3 ease;
+}
+
+.menuh a:hover::after {
+    opacity: 1;
+}
+
+.menuh a:hover {
+    color: #e7b5fd
+}
+
+
+/*****************************************COMEÇA O CARROSEL DE IMAGENS******************************************************/
+
+.carousel-wrapper {
+    height: 520px;
+    position: relative;
+    width: 1519px;
+    display: block;
+    margin: 0px;
+    border: 2px solid white;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+}
+
+.arrow-prev {
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+
+}
+
+.arrow-next {
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^="item"] {
+    display: none;
+}
+
+.item-1 {
+    z-index: 2;
+    opacity: 1;
+    background: url('imagecarrossel/img1.png');
+    background-size: cover;
+}
+
+.item-2 {
+    background: url('imagecarrossel/img2.png');
+    background-size: cover;
+}
+
+.item-3 {
+    background: url('imagecarrossel/img3.png');
+    background-size: cover;
+}
+
+.item-4 {
+    background: url('imagecarrossel/img4.png');
+    background-size: cover;
+}
+
+*:target~.item-1 {
+    opacity: 0;
+}
+
+#item-1:target~.item-1 {
+    opacity: 1;
+
+}
+
+#item-2:target~.item-2,
+#item-3:target~.item-3,
+#item-4:target~.item-4 {
+    z-index: 3;
+    opacity: 1;
+}
+
+/*****************************************TERMINA O CARROSEL DE IMAGENS******************************************************/
+
+.align {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+.base-conteudo {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    /*Define um modelo de grade de 4 colunas de largura igual usando grid-template-columns*/
+    gap: 3rem;
+    /*espaçamento, adiciona um espaço de 3 rementre as células da grade usando gap*/
+    padding: 3rem 0;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    border-radius: 1rem;
+    gap: 1.5rem;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    padding: 1.0rem 0;
+    box-shadow: 10px 5px 5px rgb(19, 19, 19);
+    cursor: pointer;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    /*Define a direção flexivel para a coluna usando flex-direction*/
+    gap: 0.5rem;
+}
+
+.card:hover {
+    color: #FF66C4;
+    background-color: #e7b5fd;
+}
+
+.conteudo span {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.conteudo p {
+    font-weight: 400;
+}
+
+/************************************* S O B R E   P A P E L A R I C E S**************************************/
+
+.titulosobre {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    color: #FF66C4;
+}
+
+.just {
+    display: flex;
+    justify-items: center;
+    padding: 50px 150px 50px 150px;
+}
+
+.texto {
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    color: white;
+}
+
+.conteudo span,
+p {
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: medium;
+    font-style: normal;
+}
+
+.conteudo p {
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: smaller;
+    font-style: normal;
+}
+
+/************************************************** B A L Ã O   D E  F A L A*******************************************************/
+
+
+.just .balaodefala {
+    margin-top: 10px;
+}
+
+.just .balaodefala h2 {
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    font-style: normal;
+    color: #FF66C4;
+    margin-top: -487px;
+    margin-left: 35px;
+    padding: 40px;
+}
+
+.balaodefala img{
+    margin-top: -80px; 
+}
+
+/***************************************** I N I C I  A -S E  A S  C A N E T A S*************************************************/
+.heading-1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+    color: white;
+}
+
+.canetas .titulosobre h1{
+    margin-top: 20px;
+}
+
+.conteiner-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*Matém 4 colunas em  uma linha*/
+    gap: 2rem;
+    /*Diminuir o espaço entre os cards*/
+    margin: 0px 50px 50px 50px
+}
+
+.card-product {
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    /*Diminuir o padding para ajustar o tamanho*/
+    border-radius: 1.0rem;
+    cursor: pointer;
+    box-shadow: 0 0 2px #FF66C4;
+    width: 100%;
+    /*Garante que o card ocupe a largura da coluna*/
+}
+
+.conteiner-img {
+    position: relative;
+}
+
+.conteiner-img img {
+    width: 100%;
+}
+
+.conteiner-img .discount {
+    position: absolute;
+    left: 0;
+    color: white;
+    padding: 2px 1.2rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+
+.card-product:hover .discount {
+    background-color: #11ff00;
+}
+
+/***********************************************************************************************************************************/
+/*                                            A N I M A Ç Ã O   B O T Õ E S                                                        */
+/***********************************************************************************************************************************/
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    /*POSIÇÃO ABSOLUTA PARA POSIONMANETO ESPECIFICO, VAI FICAR FIXADA*/
+    top: 0;
+    /*ALINHAMENTO NO TOPO*/
+    right: -2rem;
+    /*ALINHAMENTO A DIREITA*/
+    z-index: -1;
+    /*Definição sobre a posição inicial*/
+    transition: all 0.4s ease;
+    /*Animação de transição suave*/
+}
+
+.button-group span {
+    border: 1px solid #F7E5FF;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.button-group span:hover {
+    background-color: #FF66C4;
+}
+
+.button-group span i {
+    font-size: 1.5rem;
+    color: #FF66C4;
+}
+
+.button-group span:hover i {
+    color: #fff;
+}
+
+.card-product:hover .button-group {
+    z-index: 0;
+    right: -1rem
+}
+
+/***********************************************************************************************************************************/
+/*                                         I N I C I A - S E  A S  E S T R E  L A S                                                */
+/***********************************************************************************************************************************/
+
+.content-card-product {
+    display: grid;
+    /*Definir um layout de grade*/
+    justify-items: center;
+    /*centraliza os itens horizontalmente*/
+    grid-template-columns: 1fr 1fr;
+    /*cria duas colunas de tamanho igual*/
+    grid-template-rows: repeat(4, min-content);
+    /*cria quatro linhas de altura minima*/
+    row-gap: 1rem;
+    /*espaçamento vertical entre as linhas*/
+}
+
+.stars {
+    grid-row: 1/2;
+    /*ocupa a primeira linha da grade*/
+    grid-column: 1/-1;
+    /*ocupa todas as colunas da grade*/
+}
+
+.stars i {
+    font-size: 1.2rem;
+    /*Define o tamanho das estrelas*/
+    color: #FFADD6;
+}
+.titulo-prod {
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    color: #FF66C4;
+}
+.content-card-product h3 {
+    grid-row: 2/3;
+    /*ocupa a segunda linha da grade*/
+    grid-column: 1/-1;
+    /*ocupa todas as colunas da grade*/
+    font-weight: 400;
+    /*define o peso da fonte*/
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    /*muda o cursor para indicar que o titulo é clicável*/
+}
+
+.content-card-product h3:hover {
+    color: #FF66C4;
+}
+
+.add-cart {
+    justify-self: start;
+    /*alinha o botão ao inicio horizontalmente*/
+    border: 2px solid #FFADD6;
+    /*Define uma borda ao redor do botão*/
+    padding: 1rem;
+    border-radius: 50%;
+    /*define o formato circular nos cantos, com arredontamento*/
+    cursor: pointer;
+    transition: all 0.4s ease;
+    /*Transição suave ao alterar os estilos*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*centraliza o conteudo horizontamente*/
+
+}
+
+.add-cart:hover {
+    background-color: #FF66C4;
+    color: #fff
+}
+
+.add-cart i {
+    font-size: 0.9rem;
+    color: #FFADD6;
+}
+
+.add-cart:hover i {
+    color: #fff;
+}
+
+.content-card-product .price {
+    justify-self: end;
+    align-self: center;
+    /*alinha preço verticalmente*/
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.content-card-product .price span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-decoration: line-through;
+    /*aplica um risco sobre o preço*/
+    color: #777;
+    margin-left: 0.5rem;
+    /*define uma margem a esquerda do preço original*/
+}
+/*************************************************** C O M E Ç A  A S  M A R C A S*************************************************************/
+.marcas {
+    display: flex;
+}
+/**********************************************T É R M I N O  D A S   M A R C A S**************************************************************/
+
+/********************************************** C O M E Ç O  D O   F O O T E R ****************************************************************/
+
+footer{
+    background-color: #FF66C4;
+    padding: 50px 0;
+}
+.container-footer{
+    max-width: 1400px;
+    padding: 0 4%;
+    margin: auto;
+}
+.row-footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer-col ul{
+    list-style: none;
+}
+.footer-col ul li{
+    margin: 10px 0;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #cecdcd;
+    padding-left: 10px;
+}
+.footer-col .medias-socias{
+    margin-top: 30px;
+}
+.footer-col .medias-socias a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+}
+.footer-col .medias-socias a i{
+    font-size: 20px;
+}
+
+.footer-col .medias-socias a:hover{
+    color: #e7b5fd;
+    background-color: white;
+}
+.footer-col .form-sub input{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    background-color: #FFADD6;
+}
+.footer-col .form-sub input::placeholder{
+    color: white;
+}
+.footer-col .form-sub button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px; 
+    font-size: 17px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #FFADD6;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: white;        
+}
+/* Responsivo */
+@media (max-width: 800px) {
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width:600px) {
+    .footer-col{
+        width: 100%;
+    }
+}
+
+/******************************************************F I M  D O  F O O T E R*************************************************************/
